@@ -53,6 +53,7 @@ header {
 
 .card-content {
   padding: 40px;
+  padding-bottom: 60px;
 }
 
 .device-icon {
@@ -62,14 +63,14 @@ header {
 }
 
 /*
-.card-header icon {
-  width: 50px;
-  height: 50px;
-  padding: 40px;
-  padding-right: 20px;
-  padding-top: 50px;
-}
-*/
+  .card-header icon {
+    width: 50px;
+    height: 50px;
+    padding: 40px;
+    padding-right: 20px;
+    padding-top: 50px;
+  }
+  */
 
 .info {
   flex-grow: 1;
@@ -89,8 +90,10 @@ header {
 
 .card-footer {
   background-color: lightgray;
-  padding: 30px;
-  font-weight: bold;
+  padding: 20px;
+  padding-top: 0px;
+  font-weight: 550;
+  font-size: 18px;
   transition: background-color 0.3s ease;
 
   position: absolute; /* Set position to absolute */
@@ -101,13 +104,13 @@ header {
   border-bottom-right-radius: 10px; /* Match border radius of the device card */
 }
 
-.card-footer button {
-  width: 100%; /* Fill the entire width of the footer */
-  height: 100%; /* Fill the entire height of the footer */
-  border: none; /* Remove button border */
-  border-radius: inherit; /* Inherit border radius from the footer */
+/*.card-footer button {
+  width: 100%; // Fill the entire width of the footer 
+  height: 100%; // Fill the entire height of the footer 
+  border: none; // Remove button border 
+  border-radius: inherit; // Inherit border radius from the footer
   cursor: pointer;
-}
+}*/
 
 .device-info {
   margin-left: 20px; /* Adjust spacing from the left border */
@@ -115,5 +118,65 @@ header {
 }
 
 .dark-gray {
-  background-color: #424242;
+  background-color: #ccc;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

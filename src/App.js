@@ -24,14 +24,24 @@ function DeviceCard({
   usageTime,
   currentMode,
 }) {
-  const [powerButtonClicked, setPowerButtonClicked] = useState(false);
+  /*const [powerButtonClicked, setPowerButtonClicked] = useState(false);
   const handlePowerButtonClick = () => {
     // Perform any desired action on button click
     // For example, fetch data or toggle some state
     setPowerButtonClicked(true);
     setTimeout(() => {
       setPowerButtonClicked(false);
-    }, 1000);
+    }, 1000);*/
+  const [isSwitchOn, setSwitchOn] = useState(false);
+
+  const handleSwitchToggle = () => {
+    setSwitchOn(!isSwitchOn);
+    // Perform any other action you want when the switch is toggled
+
+    /*if (!isSwitchOn) {
+      // If switch is turned on, fetch data or perform any other action
+      fetchData(); // Example function to fetch data
+    }*/
   };
 
   return (
@@ -73,12 +83,17 @@ function DeviceCard({
           </div>
         </div>
       </div>
-      <button
-        className={`card-footer ${powerButtonClicked ? "dark-gray" : ""}`}
-        onClick={handlePowerButtonClick}
-      >
-        Power
-      </button>
+      <div className="card-footer">
+        <p>Power</p>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={isSwitchOn}
+            onChange={handleSwitchToggle}
+          />
+          <span className="slider round"></span>
+        </label>
+      </div>
     </div>
   );
 }
