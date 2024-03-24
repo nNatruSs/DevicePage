@@ -1,0 +1,119 @@
+/* styles.css */
+.app {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.devices-title {
+  font-weight: bold;
+  font-size: 38px; /* Example size */
+  color: #333; /* Example color */
+}
+
+.danger-zone {
+  text-decoration: none; /*remove underline*/
+  font-size: 20px; /* Example size */
+  color: #777; /* Example color */
+}
+.danger-zone:hover {
+  /* Optional: Change color on hover */
+  color: hwb(0 0% 2% / 0.795); /* Example hover color */
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.device-card {
+  flex: 1 0 calc(45% - 20px); /* Adjusted with margin */
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  allign-items: center;
+  text-align: left;
+  padding: 40px;
+  padding-bottom: 0px;
+}
+
+.card-content {
+  padding: 40px;
+}
+
+.device-icon {
+  padding: 40px;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+
+/*
+.card-header icon {
+  width: 50px;
+  height: 50px;
+  padding: 40px;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+*/
+
+.info {
+  flex-grow: 1;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.row .icon {
+  margin-right: 15px;
+}
+
+.card-footer {
+  background-color: lightgray;
+  padding: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  position: absolute; /* Set position to absolute */
+  bottom: 0; /* Position at the bottom */
+  left: 0; /* Position at the left */
+  right: 0; /* Position at the right */
+  border-bottom-left-radius: 10px; /* Match border radius of the device card */
+  border-bottom-right-radius: 10px; /* Match border radius of the device card */
+}
+
+.card-footer button {
+  width: 100%; /* Fill the entire width of the footer */
+  height: 100%; /* Fill the entire height of the footer */
+  border: none; /* Remove button border */
+  border-radius: inherit; /* Inherit border radius from the footer */
+  cursor: pointer;
+}
+
+.device-info {
+  margin-left: 20px; /* Adjust spacing from the left border */
+  margin-top: 20px; /* Adjust spacing from the top border */
+}
+
+.dark-gray {
+  background-color: #424242;
+}
